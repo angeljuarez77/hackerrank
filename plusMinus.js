@@ -18,7 +18,8 @@ function plusMinus(arr){
   const positivesRatio = Number.parseFloat(positives/arr.length).toFixed(6);
   const negativesRatio = Number.parseFloat(negatives/arr.length).toFixed(6);
   const zerosRatio = Number.parseFloat(zeros/arr.length).toFixed(6);
-  return console.log()
+
+  [positivesRatio, negativesRatio, zerosRatio].forEach(ratio => console.log(ratio));
 };
 
 console.log(plusMinus(arr));
