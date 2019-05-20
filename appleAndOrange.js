@@ -37,7 +37,7 @@ function appleAndOrange(s, t, a, b, apples, oranges){
   let applesOnHouse = areTheyInRange(samsHouse, applePlacements);// to be used later to count apples
   let orangesOnHouse = areTheyInRange(samsHouse, orangePlacements); // to be used later to count oranges
 
-  return `${applesOnHouse} \n ${orangesOnHouse}`;
+  return `${applesOnHouse} \n${orangesOnHouse}`;
 };
 
 const results = appleAndOrange(startOfHouse, endOfHouse, appleTree, orangeTree, fallenApples, fallenOranges);
