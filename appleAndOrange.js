@@ -31,11 +31,11 @@ function appleAndOrange(s, t, a, b, apples, oranges){
     return fruitCount;
   };
 
-  const samsHouse = formHouseRange(s, t); // arr w/ range from s - t
-  const applePlacements = calculateFruitPlacement(apples, a); // arr w/ a + apples[i]
-  const orangePlacements = calculateFruitPlacement(oranges, b); // arr w b + oranges[i]
-  let applesOnHouse = areTheyInRange(samsHouse, applePlacements);// to be used later to count apples
-  let orangesOnHouse = areTheyInRange(samsHouse, orangePlacements); // to be used later to count oranges
+  const samsHouse = formHouseRange(s, t);
+  const applePlacements = calculateFruitPlacement(apples, a);
+  const orangePlacements = calculateFruitPlacement(oranges, b);
+  let applesOnHouse = areTheyInRange(samsHouse, applePlacements);
+  let orangesOnHouse = areTheyInRange(samsHouse, orangePlacements);
 
   return `${applesOnHouse} \n${orangesOnHouse}`;
 };
