@@ -16,7 +16,12 @@ function appleAndOrange(s, t, a, b, apples, oranges){
   };
 
   function calculateFruitPlacement(arr, treePlacement){
-    return arr.map(fruitSpot => treePlacement + fruitSpot);
+    const newArr = [];
+    for(let i = 0; i < arr.length; i++){
+      const fruitPlace = arr[i] + treePlacement;
+      newArr.push(fruitPlace);
+    }
+    return newArr;
   };
 
   function areTheyInRange(houseRange, fruitsPlacement){
@@ -37,9 +42,7 @@ function appleAndOrange(s, t, a, b, apples, oranges){
   let applesOnHouse = areTheyInRange(samsHouse, applePlacements);
   let orangesOnHouse = areTheyInRange(samsHouse, orangePlacements);
 
-  return `${applesOnHouse} \n${orangesOnHouse}`;
+  return console.log(`${applesOnHouse} \n${orangesOnHouse}`);
 };
 
-const results = appleAndOrange(startOfHouse, endOfHouse, appleTree, orangeTree, fallenApples, fallenOranges);
-
-console.log(results);
+appleAndOrange(startOfHouse, endOfHouse, appleTree, orangeTree, fallenApples, fallenOranges);
