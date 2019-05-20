@@ -15,13 +15,29 @@ function appleAndOrange(s, t, a, b, apples, oranges){
     return arr;
   };
 
-  const samsHouse = formHouseRange(s, t); // arr w/ range from s - t
-  const applePlacements = []; // arr w/ a + apples[i]
-  const orangePlacements = []; // arr w b + oranges[i]
-  let applesOnHouse = 0; // to be used later to count apples
-  let orangesOnHouse = 0; // to be used later to count oranges
+  function calculateFruitPlacement(arr, treePlacement){
+    return arr.map(fruitSpot => treePlacement + fruitSpot);
+  };
 
-  return samsHouse;
+  function areTheyInRange(houseRange, fruitsPlacement){
+    let fruitCount = 0;
+    for(let i = 0; i < houseRange.length; i++){
+      for(let j = 0; j < fruitsPlacement.length; j++){
+        if(houseRange[i] === fruitsPlacement[j]){
+          fruitCount++;
+        }
+      };
+    };
+    return fruitCount;
+  };
+
+  const samsHouse = formHouseRange(s, t); // arr w/ range from s - t
+  const applePlacements = calculateFruitPlacement(apples, a); // arr w/ a + apples[i]
+  const orangePlacements = calculateFruitPlacement(oranges, b); // arr w b + oranges[i]
+  let applesOnHouse = areTheyInRange(samsHouse, applePlacements);// to be used later to count apples
+  let orangesOnHouse = areTheyInRange(samsHouse, orangePlacements); // to be used later to count oranges
+
+  return orangesOnHouse;
 };
 
 const results = appleAndOrange(startOfHouse, endOfHouse, appleTree, orangeTree, fallenApples, fallenOranges);
