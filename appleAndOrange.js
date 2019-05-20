@@ -19,9 +19,10 @@ function appleAndOrange(s, t, a, b, apples, oranges){
   function areTheyInRange(startOfHouse, endOfHouse, fruitsPlacement){
     let fruitCount = 0;
     for(let i = 0; i < fruitsPlacement.length; i++){
-      if(fruitsPlacement[i] > startOfHouse && fruitsPlacement < endOfHouse){
-        fruitCount++;
-      }
+      console.log(fruitsPlacement[i]);
+      // if(fruitsPlacement[i] > startOfHouse && fruitsPlacement < endOfHouse){
+      //   fruitCount++;
+      // }
     };
   // for(let i = 0; i < houseRange.length; i++){
   //   for(let j = 0; j < fruitsPlacement.length; j++){
@@ -38,7 +39,7 @@ function appleAndOrange(s, t, a, b, apples, oranges){
   let applesOnHouse = areTheyInRange(s, t, applePlacements);
   let orangesOnHouse = areTheyInRange(s, t, orangePlacements);
 
-  return console.log(`${applesOnHouse} \n${orangesOnHouse}`);
+  return console.log(orangePlacements);
 };
 
 appleAndOrange(startOfHouse, endOfHouse, appleTree, orangeTree, fallenApples, fallenOranges);
